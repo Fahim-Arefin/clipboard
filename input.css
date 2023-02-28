@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    h1{
+        @apply text-4xl md:text-5xl text-heroHeader font-bold;
+    }
+    h3{
+        @apply text-2xl font-bold text-heroHeader;
+    }
+    p{
+        @apply text-xl md:text-2xl text-ass;
+    }
+}
+
+.section-container{
+    @apply max-w-6xl mx-auto text-center space-y-8 p-14 mt-10 md:mt-32;
+}
+
+.small-paragraph{
+    @apply text-lg text-ass max-w-sm mx-auto
+}
