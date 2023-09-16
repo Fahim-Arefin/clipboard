@@ -1,27 +1,51 @@
-# Course Registration
+<h1 align="center">Course Registration</h1>
 
-## Project Features
+<p align="center">Welcome to the Course Registration web application project!</p>
 
-This is a web application project for selecting courses from fake data. Some features include:
+## Table of Contents
+- [Project Features](#project-features)
+- [State Management](#state-management)
 
-1. **Fetching and Displaying Course Data**: The project fetches course data from an external JSON file using the fetch API and the useEffect hook. This feature ensures that the latest course information is available to users. The fetched data is then displayed in the CourseList component, providing users with a list of available courses to choose from.
+## 🚀 Project Features
 
-2. **Course Selection and Credit Limit Checking**: One of the primary features of the project is the ability for users to select courses for registration. The `handleSelectBtnClick` function allows users to add courses to their selected course list. However, it also includes a credit limit check to ensure that the total credits of selected courses do not exceed 20. If a user attempts to select more courses than the credit limit allows, a toast notification is displayed to inform them of this constraint.
+This web application allows users to select courses from a database of fake course data. Some of its standout features include:
 
-3. **Toast Notifications for User Feedback**: The project utilizes the react-toastify library to provide real-time feedback to users. Toast notifications are displayed to inform users of important events or errors. For example, when a user attempts to select a course that is already in their selected course list or exceeds the credit limit, a toast notification is shown to alert them to the issue. This feature enhances the user experience by providing clear and immediate feedback.
+1. **Fetching and Displaying Course Data**
+   - The project seamlessly fetches course data from an external JSON file using the fetch API and the useEffect hook.
+   - This ensures that users always have access to the most up-to-date course information.
+   - The fetched data is elegantly presented in the CourseList component, providing users with a user-friendly list of available courses to choose from.
 
-## How State is Managed in the Assignment Project
+2. **Course Selection and Credit Limit Checking**
+   - The project empowers users to select courses for registration with a user-friendly interface.
+   - The `handleSelectBtnClick` function allows users to add courses to their selected course list.
+   - It also performs a credit limit check to ensure that the total credits of selected courses do not exceed 20.
+   - If a user attempts to select more courses than the credit limit allows, a visually appealing toast notification is displayed to gently inform them of this constraint.
 
-1. **Course Data State (data)**: The `data` state variable is used to store the course data fetched from an external JSON file. It is initialized as an empty array using the `useState([])`. It will then be passed down as a prop to child components and further via prop drilling to a component responsible for displaying course cards.
+3. **Toast Notifications for User Feedback**
+   - The project leverages the power of the react-toastify library to provide real-time feedback to users.
+   - Toast notifications elegantly pop up to inform users about important events or errors.
+   - For instance, when a user tries to select a course that's already in their selected course list or exceeds the credit limit, a stylish toast notification pops up to gracefully alert them to the issue.
+   - This feature enhances the overall user experience by providing clear and immediate feedback.
 
-2. **Selected Courses State (selectedCourse)**: The `selectedCourse` state variable is used to keep track of the courses that have been selected by the user. It is initialized as an empty array. This state contains unique courses, ensuring that no duplicate selections are found.
+## 🧐 State Management
 
-3. **Handling Toast Messages (handleToast)**: The `handleToast` function is defined to display toast notifications using the react-toastify library. It accepts a message as a parameter and shows an error toast with the specified message.
+The state management in this project is carefully crafted to provide a seamless user experience. Here's how we manage state:
 
-4. **Course Selection Logic (handleSelectBtnClick)**: The `handleSelectBtnClick` function is responsible for managing the course selection process. It checks whether the selected course is already in the `selectedCourse` array. If it's not found, it proceeds with the selection process.
+1. **Course Data State (data)**
+   - The `data` state variable is skillfully employed to store the course data fetched from an external JSON file.
+   - It is thoughtfully initialized as an empty array using the `useState([])` hook.
+   - This data is then meticulously passed down as a prop to child components and further via prop drilling to components responsible for displaying course cards.
 
-   Before adding a course to the selected courses list, it calculates the sum of credits of the currently selected courses (`selectedCourse`). It also calculates the next sum if the new course is added to ensure that the total credits do not exceed a limit (in this case, 20 credits).
+2. **Selected Courses State (selectedCourse)**
+   - The `selectedCourse` state variable is meticulously used to keep track of the courses that have been selected by the user.
+   - It is gracefully initialized as an empty array.
+   - This state effortlessly contains only unique courses, ensuring that no duplicate selections are found.
 
-   If the next sum exceeds the credit limit, it displays a toast message to inform the user that they can't take more than 20 credits. Otherwise, it adds the selected course to the `selectedCourse` array using `setSelectedCourse`.
+3. **Handling Toast Messages (handleToast)**
+   - The `handleToast` function is stylishly defined to display toast notifications using the react-toastify library.
+   - It accepts a message as a parameter and shows an error toast with the specified message.
+   - The appearance and animations of these toast notifications provide an aesthetically pleasing user experience.
 
-5. **Fetching Data with useEffect**: The useEffect hook is used to fetch the course data from an external JSON file when the component is mounted. This ensures that the data is loaded only once when the component is initially rendered. The fetched data is then stored in the `data` state variable using `setData`.
+4. **Course Selection Logic (handleSelectBtnClick)**
+   - The `handleSelectBtnClick` function is expertly responsible for managing the course selection process.
+   - It skillfully checks whether the selected course is already in the
