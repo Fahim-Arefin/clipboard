@@ -48,4 +48,15 @@ The state management in this project is carefully crafted to provide a seamless 
 
 4. **Course Selection Logic (handleSelectBtnClick)**
    - The `handleSelectBtnClick` function is expertly responsible for managing the course selection process.
-   - It skillfully checks whether the selected course is already in the
+   - It skillfully checks whether the selected course is already in the `selectedCourse` array before proceeding with the selection process.
+   - Before adding a course to the selected courses list, it intelligently calculates the sum of credits of the currently selected courses (`selectedCourse`) and the potential sum if the new course is added.
+   - This smartly ensures that the total credits do not exceed a predefined limit (in this case, 20 credits).
+   - If the limit is exceeded, a visually pleasing toast message gently informs the user that they can't take more than 20 credits.
+   - Otherwise, it adds the selected course to the `selectedCourse` array using `setSelectedCourse`.
+
+5. **Fetching Data with useEffect**
+   - The useEffect hook is brilliantly employed to fetch the course data from an external JSON file when the component is mounted.
+   - This ensures that the data is loaded only once when the component is initially rendered.
+   - The fetched data is then stored in the `data` state variable using `setData`.
+
+Feel free to explore the project and enjoy the visually appealing and user-friendly experience it offers!
